@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>接口文档 - 微信域名检测接口 - 雨燕软件</title>
+    <meta name="keywords" content="微信域名检测,QQ域名检测,源码下载" />
+    <meta name="description" content="雨燕软件提供微信域名实时检测接口,微信域名批量检测接口,返回查询结果实时邮件通知,准确率99.99%,API接口响应速度快,为您的微信项目保驾护航." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet nofollow" href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet nofollow" href="//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet nofollow" href="css/main.css">
+    <link rel="Bookmark nofollow" href="img/favicon.ico">
+    <link rel="Shortcut Icon nofollow" href="img/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?241c946c09e1424bad5f78954fb0dffe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="page" class="page">
+        <!--start header -->
+        <header class="header8" id="home">
+            <!--start navigation -->
+            <nav role="navigation" class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+                            <span class="sr-only">菜单</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.html" class="navbar-brand brand"><i class="fa fa-comments" aria-hidden="true"></i>雨燕软件</a>
+                    </div>
+                    <div id="navbar-collapse-02" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="scroll" href="index.html">首页</a></li>
+                            <li class="active"><a class="scroll" title="api接口文档介绍" href="doc.html">接口文档</a></li>
+                            <li><a class="scroll" title="域名批量检测查询服务接口" href="checklist.html">批量检测</a></li>
+                            <li><a class="scroll" title="微信域名检测收费标准" href="price.html">收费标准</a></li>
+                            <li><a class="scroll" title="注册登录" rel="nofollow" target="_blank" href="https://url.cn/5tfpnVq">注册登录</a></li>
+                            <li><a class="scroll" title="常见问题解答-faq" href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--start navigation -->
+            <!--end content -->
+            <div class="intro center-content">
+                <div class="container">
+                    <div class="row" style="margin:0 auto;padding:33px;background-color:#fff;border-radius:1px;">
+                        <strong>免费检测接口集合:</strong>
+                        <hr class="animate-box fadeInUp animated">
+                        <div class="media animate-box fadeInUp animated">
+                            <h5 class="media-heading text-overflow margin-bottom-10">微信域名检测免费接口</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">http://wx.rrbay.com/pro/wxUrlCheck.ashx?url=www.qq.com</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">QQ域名检测免费接口</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">http://wx.rrbay.com/pro/qqUrlCheck.ashx?url=www.qq.com</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">域名icp备案查询免费接口</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">http://wx.rrbay.com/pro/icpCheck.ashx?url=www.qq.com</code>
+                            </div>
+                        </div>
+                        <hr class="animate-box fadeInUp animated">
+                        <strong>注意:url=待检测的可以是域名也可以是链接(链接请url编码后传参)</strong>
+                        <hr class="animate-box fadeInUp animated">
+                        <div class="media animate-box fadeInUp animated">
+                            <h5 class="media-heading text-overflow margin-bottom-10">调用正常：被微信或者QQ检测的域名被屏蔽</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">{"State":true,"Code":"101","Data":"www.teu7.cn","Msg":"屏蔽"}</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">调用正常：恭喜,正常域名</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">{"State":true,"Code":"102","Data":"www.wxcheckurl.com","Msg":"正常"}</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">调用正常：本次检测结果未知</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">{"State":true,"Code":"103","Data":"www.wxcheckurl.com","Msg":"检测结果为空,请重试!"}</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">调用异常：参数有误请检查参数</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">{"State":false,"Code":"001","Data":"www.wxcheckurl.com","Msg":"非法访问，访问被拒绝,联系管理员qq:391502069"}</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">调用异常：接口调用频率过快,如需更快调用升级VIP</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">{"State":false,"Code":"002","Data":"www.wxcheckurl.com","Msg":"歇一歇,访问太快了,联系管理员qq:391502069"}</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">调用异常：其它异常,不影响.</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">{"State":false,"Code":"003","Data":"www.wxcheckurl.com","Msg":"服务暂停,请联系管理员!"}</code>
+                            </div>
+                        </div>
+                        <hr class="animate-box fadeInUp animated">
+                        <strong>付费域名检测接口集合:</strong>
+                        <hr class="animate-box fadeInUp animated">
+                        <div class="media animate-box fadeInUp animated">
+                            <h5 class="media-heading text-overflow margin-bottom-10">微信域名检测接口get请求</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">http://wx.rrbay.com/pro/wxUrlCheck2.ashx?key=秘钥&url=你要检测的网址或者域名</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">QQ域名检测接口get请求</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">http://wx.rrbay.com/pro/qqUrlCheck2.ashx?key=秘钥&url=你要检测的网址或者域名</code>
+                            </div>
+                            <br />
+                            <h5 class="media-heading text-overflow margin-bottom-10">域名icp备案查询接口get请求</h5>
+                            <div class="media-body text-muted">
+                                <code style="font-size:small;">http://wx.rrbay.com/pro/icpCheck2.ashx?key=秘钥&url=你要检测的网址或者域名</code>
+                            </div>
+                        </div>
+                        <hr class="animate-box fadeInUp animated">
+                        <p>
+                            <div>
+                                <a href="https://github.com/gemgin/WeChatTools" rel="nofollow" target="_blank" class="btn btn-info" title="微信QQ域名检测核心源码下载">github源码下载</a>
+                                <a href="https://gitee.com/qqWebChat/WeChatTools.git" rel="nofollow" target="_blank" class="btn btn-info" title="微信QQ域名检测核心源码下载">gitee源码下载</a>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--end content -->
+        </header>
+        <!--end  header -->
+        <!--start footer -->
+        <footer class="footer8">
+            <div class="container">
+                <div class="col-md-12" style="color:#d8c7c7">
+                    Copyright &copy;
+                    <script type="text/javascript">var date = new Date; document.write(unescape(date.getFullYear()));</script> <a href="index.html" title="雨燕软件">雨燕软件</a>
+                    <p class="pull-right small">工作时间 <code>9:00--20:00</code></p>
+                </div>
+            </div>
+        </footer>
+        <!--end footer -->
+    </div>
+    <!--=== Load JS here for cdn ====-->
+    <script type="text/javascript" rel="nofollow" src="//cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" rel="nofollow" src="//cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

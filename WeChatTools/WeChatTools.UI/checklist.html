@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>微信域名批量检测 - 微信域名检测接口 - 雨燕软件</title>
+    <meta name="keywords" content="微信域名检测" />
+    <meta name="description" content="雨燕软件提供微信域名实时检测接口,微信域名批量检测接口,返回查询结果实时邮件通知,准确率99.99%,API接口响应速度快,为您的微信项目保驾护航." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet nofollow" href="//cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet nofollow" href="//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet nofollow" href="css/main.css">
+    <link type="text/css" rel="stylesheet nofollow" href="css/checklist.css">
+    <link rel="Bookmark nofollow" href="img/favicon.ico">
+    <link rel="Shortcut Icon nofollow" href="img/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?241c946c09e1424bad5f78954fb0dffe";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="page" class="page">
+        <!--start header -->
+        <header class="header8" id="home">
+            <!--start navigation -->
+            <nav role="navigation" class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+                            <span class="sr-only">菜单</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.html" class="navbar-brand brand"><i class="fa fa-comments" aria-hidden="true"></i>雨燕软件</a>
+                    </div>
+                    <div id="navbar-collapse-02" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="scroll" href="index.html">首页</a></li>
+                            <li><a class="scroll" title="api接口文档介绍" href="doc.html">接口文档</a></li>
+                            <li class="active"><a class="scroll" title="域名批量检测查询服务接口" href="checklist.html">批量检测</a></li>
+                            <li><a class="scroll" title="微信域名检测收费标准" href="price.html">收费标准</a></li>
+                            <li><a class="scroll" title="注册登录" rel="nofollow" target="_blank" href="https://url.cn/5tfpnVq">注册登录</a></li>
+                            <li><a class="scroll" title="常见问题解答-faq" href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--start navigation -->
+            <!--end content -->
+            <div class="intro center-content">
+                <div class="container mt101">
+                    <div class="test ">
+                        <div>
+                            <span>请输入购买的微信域名检测Key:</span>
+                            <input id="kw" name="wd" class="yj1" type="text" value="341e0b5df120394ec99e517b67774399" />
+                        </div>
+                        <!-- 输入要检测的域名 -->
+                        <h2>
+                            请输入你要检测的域名:
+                            <label><input name="checkModel" id="checkModel" type="radio" value="AuthKey" checked style="vertical-align:middle; margin: -2px  5px  1px  8px" />微信域名安全检测</label>
+                            <label><input name="checkModel" id="checkModel" type="radio" value="AuthQQKey" style="vertical-align:middle; margin: -2px  5px  1px  8px" />qq域名安全检测 </label>
+                            <label><input name="checkModel" id="checkModel" type="radio" value="AuthQQGJICPKey" style="vertical-align:middle; margin: -2px  5px  1px  8px" />域名备案信息查询</label>
+                        </h2>
+                        <textarea name="content" id="content" class="write-address" placeholder="可以输入多个域名，一行一个，回车换行"></textarea>
+                        <div class="test-btn"><button id="btn_check">开始检测</button> </div>
+                        <!-- 检测进程 -->
+                        <div class="title">
+                            <h2>进程:</h2>
+                            <span class="res_tips">正常<a>[0]</a>个，屏蔽：<a>[0]</a>个，失败：<a>[0]</a>个</span>
+                        </div>
+                        <ul class="list"></ul>
+                    </div>
+                    <div class="blank" style="background-color:#000;display:none">
+                        <textarea id="ck_ok"></textarea>
+                        <textarea id="ck_stop"></textarea>
+                        <textarea id="ck_err"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!--end content -->
+        </header>
+        <!--end  header -->
+        <!--start footer -->
+        <footer class="footer8">
+            <div class="container">
+                <div class="col-md-12" style="color:#d8c7c7">
+                    Copyright &copy;
+                    <script type="text/javascript">var date = new Date; document.write(unescape(date.getFullYear()));</script> <a href="index.html" title="雨燕软件">雨燕软件</a>
+                    <p class="pull-right small">工作时间 <code>9:00--20:00</code></p>
+                </div>
+            </div>
+        </footer>
+        <!--end footer -->
+    </div>
+    <!--=== Load JS here for cdn ====-->
+    <script type="text/javascript" rel="nofollow" src="//cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" rel="nofollow" src="//cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" rel="nofollow" src="//cdn.staticfile.org/layer/2.1/layer.js"></script>
+    <script type="text/javascript">
+        yuliang = "";
+        ck_status = 1;
+        /**
+         * 回车检测
+         */
+
+        $("#domain").keyup(function (e) {
+            if (e.keyCode === 13) {
+                if (ck_status != 0) {
+                    $("#btn_check").click();
+                }
+                return false;
+            }
+        });
+
+        /**
+         * 提交
+         */
+        $('#btn_check').click(function () {
+            ck_status = 0;//检测状态
+            var content = $('#content').val();
+            var content = content.replace(/ /g, ""); //去除文章中间空格
+            var key = $("#kw").val();   //key
+            var modelValue = $('input[name="checkModel"]:checked').val();   //取值
+            var domain_arr = new Array();
+            var domain_arr = content.split("\n");
+            var domain_len = domain_arr.length;
+            if (domain_arr != "") {
+            }
+
+            if (domain_arr != "") {
+                //判断元素不等于空
+
+                $('#btn_check').attr("disabled", "disabled");
+                $('#btn_check').html("检测中...");
+                $('#ck_ok').empty();
+                $('#ck_stop').empty();
+                $('#ck_err').empty();
+                $('.list').empty();
+                succ_count = 0;
+                err_count = 0;
+                ck_stop = 0;
+                A = 0;
+                B = 0;
+                var i = 0;
+                $('.list').empty(); // 清空列队
+                $('#btn_check').html('检测中...');
+
+                (function beach_add_domain() {
+                    setTimeout(function () {
+                        if (i < domain_len) {
+                            var domain = domain_arr[i]
+                            var lowerDomain = domain.toLowerCase();
+
+                            if (IsURL(lowerDomain) == true) {
+                                A++;
+                                $.ajax({
+
+                                    url: "//wx.rrbay.com/pro/wxUrlCheck3.ashx",
+                                    type: "POST",
+                                    dataType: 'json',
+                                    //  jsonp: 'callback',
+                                    data: {
+                                        key: key,
+                                        model: modelValue,
+                                        url: domain,
+                                    },
+                                    success: function (data) {
+
+                                        B++;
+                                        if (data.Code === "102") {
+
+                                            succ_count++;
+                                            $('.list').prepend("<li><a>" + gettime() + " >> " + domain + " -> " + data.Msg + "</a></li>");
+                                            $('#ck_ok').append(domain);
+                                            $('#ck_ok').append("\r\n");
+                                        } else if (data.Code === "101") {
+                                            $('#ck_stop').append(domain);
+                                            $('#ck_stop').append("\r\n");
+                                            ck_stop++;
+                                            $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >>" + domain + " ->" + data.Msg + "</a></li>");
+                                        } else if (data.Code === "001") {
+                                            $('#ck_err').append(domain);
+                                            $('#ck_err').append("\r\n");
+                                            domain_len = 0;
+                                            add_complete_tips(succ_count, err_count, ck_stop); //处理完成提示
+                                            err_count++;
+                                            $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >> " + domain + "非法访问,访问被拒绝,联系管理员qq:391502069</a></li>");
+                                        } else if (data.Code === "002") {
+                                            $('#ck_err').append(domain);
+                                            $('#ck_err').append("\r\n");
+                                            add_complete_tips(succ_count, err_count, ck_stop); //处理完成提示
+                                            err_count++;
+                                            $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >> " + domain + " 歇一歇,访问太快了,联系管理员qq:391502069</a></li>");
+                                        } else {
+                                            $('#ck_err').append(domain);
+                                            $('#ck_err').append("\r\n");
+                                            add_complete_tips(succ_count, err_count, ck_stop); //处理完成提示
+                                            err_count++;
+                                            $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >> " + domain + "  " + data.Msg + "</a></li>");
+                                        }
+                                        adding_tips(domain_len, succ_count, err_count, ck_stop); //处理过程中提示
+                                        if (A == B && domain_len == err_count + succ_count + ck_stop) {
+                                            add_complete_tips(succ_count, err_count, ck_stop); //处理完成提示
+                                        }
+                                    }
+                                });
+                            } else if (domain.length != 0) {
+                                $('#ck_err').append(domain);
+                                $('#ck_err').append("\r\n");
+                                $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >>  " + domain + "   格式错误</a></li>");
+                                err_count++;
+                                adding_tips(domain_len, succ_count, err_count, ck_stop); //处理过程中提示
+                                if (err_count == domain_len || domain_len == err_count + succ_count + ck_stop) {
+                                    add_complete_tips(succ_count, err_count, ck_stop); //处理完成提示
+                                }
+                            } else {
+                                //过滤空内容
+                                err_count++;
+                                $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >>过滤空内容</a></li>");
+                                if (err_count == domain_len || domain_len == err_count + succ_count + ck_stop) {
+                                    add_complete_tips(succ_count, err_count, ck_stop); //处理完成提示
+                                }
+                            }
+                            i++;
+                            beach_add_domain();
+                        }
+                    }, 2500);
+                })();
+            }
+        })
+        //处理完成提示
+        function add_complete_tips(succ_count, err_count, ck_stop) {
+            $('.res_tips').html('检测完成点击导出：正常：正常<a href="javascript:;" id="res_ok" onclick="res_ok()">[' + succ_count + ']</a>个,屏蔽：<a href="javascript:;" id="res_stop" onclick="res_stop()">[' + ck_stop + ']</a>个，失败：<a href="javascript:;" id="res_err" onclick="res_err()">[' + err_count + ']</a>个');
+            $('#btn_check').html('开始检测');
+            $("#btn_check").removeAttr("disabled");
+            ck_status = 1;//检测状态
+
+        }
+        //处理列队提示
+        function adding_tips(domain_len, succ_count, err_count, ck_stop) {
+            $('.res_tips').html('共' + domain_len + '条数据！列队处理中……正常<a href="javascript:;" id="res_ok" onclick="res_ok()">[' + succ_count + ']</a>个，屏蔽：<a href="javascript:;" id="res_stop" onclick="res_stop()">[' + ck_stop + ']</a>个，失败<a href="javascript:;" id="res_err" onclick="res_err()">[' + err_count + ']</a>个');
+        }
+        //时间获取
+        function gettime() {
+            var date = new Date();
+            var seperator1 = "-";
+            var seperator2 = ":";
+            var month = date.getMonth() + 1;
+            var strDate = date.getDate();
+            if (month >= 1 && month <= 9) {
+                month = "0" + month;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+            var currentdate = date.getHours() + seperator2 + date.getMinutes()
+                    + seperator2 + date.getSeconds();
+            return currentdate;
+        }
+        function res_ok() {
+            var ok = $('#ck_ok').val();
+            var stop = $('#ck_stop').val();
+            var err = $('#ck_err').val();
+            layer.tab({
+                area: ['380px', '300px'],
+                tab: [{
+                    title: '正常[' + succ_count + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + ok + '</textarea>'
+                }, {
+                    title: '屏蔽[' + ck_stop + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + stop + '</textarea>'
+                }, {
+                    title: '检测失败[' + err_count + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + err + '</textarea>'
+                }]
+            });
+        }
+        function res_stop() {
+            var ok = $('#ck_ok').val();
+            var stop = $('#ck_stop').val();
+            var err = $('#ck_err').val();
+            layer.tab({
+                area: ['380px', '300px'],
+                tab: [{
+                    title: '屏蔽[' + ck_stop + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + stop + '</textarea>'
+                }, {
+                    title: '正常[' + succ_count + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + ok + '</textarea>'
+                }, {
+                    title: '检测失败[' + err_count + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + err + '</textarea>'
+                }]
+            });
+
+        }
+        function res_err() {
+            var ok = $('#ck_ok').val();
+            var stop = $('#ck_stop').val();
+            var err = $('#ck_err').val();
+            layer.tab({
+                area: ['380px', '300px'],
+                tab: [{
+                    title: '检测失败[' + err_count + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + err + '</textarea>'
+                }, {
+                    title: '屏蔽[' + ck_stop + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + stop + '</textarea>'
+                }, {
+                    title: '正常[' + succ_count + ']',
+                    content: '<textarea style="margin: 5px 10px; width: 94%; height: 239px;">' + ok + '</textarea>'
+                }]
+            });
+        }
+
+        /**
+         * [IsURL 验证网址]
+         */
+        function IsURL(str_url) {
+            var strRegex = "^((https|http|ftp|rtsp|mms)?://)"
+            + "?(([0-9a-z_!~*'().&=+$%-]+: )?[0-9a-z_!~*'().&=+$%-]+@)?" //ftp的user@
+            + "(([0-9]{1,3}\.){3}[0-9]{1,3}" // IP形式的URL- 199.194.52.184
+            + "|" // 允许IP和DOMAIN（域名）
+            + "([0-9a-z_!~*'()-]+\.)*" // 域名- www.
+            + "([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\." // 二级域名
+            + "[a-z]{2,6})" // first level domain- .com or .museum
+            + "(:[0-9]{1,4})?" // 端口- :80
+            + "((/?)|" // a slash isn't required if there is no file name
+            + "(/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+/?)$";
+            var re = new RegExp(strRegex);
+            //re.test()
+            if (re.test(str_url)) {
+                return (true);
+            } else {
+                return (false);
+            }
+        }
+    </script>
+
+</body>
+</html>

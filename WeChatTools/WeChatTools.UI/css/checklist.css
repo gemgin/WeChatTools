@@ -1,0 +1,213 @@
+﻿/*浏览器样式初始化*/
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+dl,
+dd {
+    margin: 0;
+    font-weight: normal;
+}
+
+input,
+button {
+    outline: none;
+}
+
+input {
+    font-size: 14px;
+    border: 1px solid #d7d7d7;
+    color: #aeaeae;
+    font-family: "Microsoft Yahei";
+}
+/*公用和hack样式*/
+
+/*功能陆续开放中*/
+
+
+/*检测详情页面*/
+
+.check-link {
+    -webkit-box-shadow: 0 0 10px 1px #00c1de;
+    box-shadow: 0 0 10px 1px #00c1de;
+}
+
+    .check-link .domain {
+        font-size: 28px;
+        line-height: 93px;
+        text-align: center;
+        color: #fff;
+        background-color: #00c1de;
+    }
+
+    .check-link p a {
+        color: #1393a7;
+    }
+
+    .check-link .wx,
+    .check-link .x5 {
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+
+    .check-link img {
+        width: 100px;
+        margin: 30px auto;
+    }
+
+    .check-link .wx {
+        border-right: 1px solid #d7d7d7;
+    }
+
+        .check-link .wx p {
+            margin-bottom: 47px;
+            font-size: 16px;
+            color: #090723;
+        }
+
+/*微信安全检测*/
+.test {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 33px;
+    background-color: #fff;
+    border-radius: 1px;
+}
+
+    .test h2 {
+        padding-left: 24px;
+        border-left: 4px solid #28d0e9;
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .test .title {
+        position: relative;
+        text-align: center;
+    }
+
+        .test .title h2 {
+            float: left;
+        }
+
+        .test .title span {
+            font-size: 18px;
+        }
+
+            .test .title span a {
+                color: #ff3900;
+            }
+
+    .test .write-address {
+        width: 100%;
+        height: 300px;
+        overflow-y: scroll;
+        margin: 30px auto 20px;
+        padding: 15px;
+    }
+
+    .test .test-btn {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .test .test-btn button {
+            width: 263px;
+            border: #1ea1b5;
+            font-size: 18px;
+            line-height: 44px;
+            color: #fff;
+            background-color: #28d0e9;
+            border-radius: 100px;
+        }
+
+    .test .list {
+        height: 300px;
+        overflow-y: scroll;
+        margin: 30px auto 40px;
+        padding: 15px 0 0 15px;
+        border: 1px solid #d7d7d7;
+        line-height: 1.6;
+        color: #666;
+    }
+
+        .test .list .error a {
+            color: #ff3900;
+        }
+
+    .test .link {
+        margin: 30px auto;
+        padding-left: 30px;
+    }
+
+        .test .link a {
+            display: inline-block;
+            padding: 0 20px;
+            margin-bottom: 20px;
+            color: #447bc4;
+        }
+
+/* 手机端样式 */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+    }
+
+    .test {
+        width: 100%;
+        padding: 10px;
+    }
+
+        .test h2 {
+            padding-left: 10px;
+            font-size: 16px;
+        }
+
+        .test .title h2 {
+            float: none;
+            text-align: left;
+        }
+
+        .test .title span {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .test .write-address {
+            height: 150px;
+            margin: 15px auto 10px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .test .test-btn button {
+            font-size: 16px;
+            height: 40px;
+            line-height: 40px;
+        }
+}
+
+
+/*新加css*/
+.yj1 {
+    padding: 10px 16px;
+    line-height: 1.3333333;
+    height: 46px;
+    border: 2px solid #13aeb5;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px; /**/
+    border-radius: 15px;
+}
+
+
+.test .list .error1 a {
+    color: #ff3900;
+}

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CA74B68-7DAC-4716-BC34-ACE55917C57B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WeChatTools.API</RootNamespace>
+    <AssemblyName>WeChatTools.API</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="Config\site.config" />
+    <Content Include="Lib\Newtonsoft.Json.dll" />
+    <Content Include="Lib\ServiceStack.Common.dll" />
+    <Content Include="Lib\ServiceStack.Common.xml" />
+    <Content Include="Lib\ServiceStack.Interfaces.dll" />
+    <Content Include="Lib\ServiceStack.Redis.dll" />
+    <Content Include="Lib\ServiceStack.Redis.xml" />
+    <Content Include="Lib\ServiceStack.Text.dll" />
+    <Content Include="Lib\ServiceStack.Text.xml" />
+    <Content Include="dev\hdShowImg.ashx" />
+    <Content Include="pro\wxUrlCheck2.ashx" />
+    <Content Include="pro\wxUrlCheck3.ashx" />
+    <Content Include="Config\Other.config" />
+    <Content Include="dev\qzoneH5.ashx" />
+    <Content Include="pro\qqUrlCheck2.ashx" />
+    <Content Include="pro\qqUrlCheck.ashx" />
+    <Content Include="pro\shorturl.ashx" />
+    <Content Include="pro\icpCheck2.ashx" />
+    <Content Include="pro\icpCheck.ashx" />
+    <Content Include="tools\hdUrlEncode.ashx" />
+    <Content Include="pro\shorturl3.ashx" />
+    <Content Include="Config\CheckKey.config" />
+    <Content Include="dev\shorturl.ashx" />
+    <Content Include="tools\hdBase64.ashx" />
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pro\wxUrlCheck.ashx" />
+    <Content Include="wap2wx.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dev\hdShowImg.ashx.cs">
+      <DependentUpon>hdShowImg.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="dev\shorturl.ashx.cs">
+      <DependentUpon>shorturl.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pro\icpCheck.ashx.cs">
+      <DependentUpon>icpCheck.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\icpCheck2.ashx.cs">
+      <DependentUpon>icpCheck2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\qqUrlCheck.ashx.cs">
+      <DependentUpon>qqUrlCheck.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\qqUrlCheck2.ashx.cs">
+      <DependentUpon>qqUrlCheck2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="dev\qzoneH5.ashx.cs">
+      <DependentUpon>qzoneH5.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\shorturl.ashx.cs">
+      <DependentUpon>shorturl.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\shorturl3.ashx.cs">
+      <DependentUpon>shorturl3.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\wxUrlCheck.ashx.cs">
+      <DependentUpon>wxUrlCheck.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\wxUrlCheck2.ashx.cs">
+      <DependentUpon>wxUrlCheck2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\wxUrlCheck3.ashx.cs">
+      <DependentUpon>wxUrlCheck3.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\hdBase64.ashx.cs">
+      <DependentUpon>hdBase64.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="tools\hdUrlEncode.ashx.cs">
+      <DependentUpon>hdUrlEncode.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeChatTools.Core\WeChatTools.Core.csproj">
+      <Project>{c5f32fc8-4863-437a-ac5c-80d94b6354c4}</Project>
+      <Name>WeChatTools.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2180</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2180/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
