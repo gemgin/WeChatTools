@@ -48,20 +48,35 @@
   <ItemGroup>
     <Content Include="404.html" />
     <Content Include="checklist.html" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\checklist.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\layer.css" />
     <Content Include="css\main.css" />
     <Content Include="doc.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="img\alipay.jpg" />
     <Content Include="img\bg.jpg" />
     <Content Include="img\favicon.ico" />
+    <Content Include="img\icon-ext.png" />
+    <Content Include="img\icon.png" />
+    <Content Include="img\loading-0.gif" />
+    <Content Include="img\loading-1.gif" />
+    <Content Include="img\loading-2.gif" />
     <Content Include="img\webchat.jpg" />
     <Content Include="index.html" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="js\html5shiv.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\layer.js" />
     <Content Include="js\respond.min.js" />
     <Content Include="faq.html" />
     <Content Include="pay.html" />
     <Content Include="price.html" />
     <Content Include="wx.html" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
