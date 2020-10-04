@@ -71,7 +71,7 @@
     <Content Include="js\layer.js" />
     <Content Include="js\respond.min.js" />
     <Content Include="faq.html" />
-    <Content Include="pay.html" />
+    <Content Include="contact.html" />
     <Content Include="price.html" />
     <Content Include="wx.html" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
