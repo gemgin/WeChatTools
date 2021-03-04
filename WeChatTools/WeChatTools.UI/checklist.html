@@ -239,7 +239,7 @@
         })
         //处理完成提示
         function add_complete_tips(succ_count, err_count, ck_stop) {
-            $('.res_tips').html('检测完成点击导出：正常：正常<a href="javascript:;" id="res_ok" onclick="res_ok()">[' + succ_count + ']</a>个,屏蔽：<a href="javascript:;" id="res_stop" onclick="res_stop()">[' + ck_stop + ']</a>个，失败：<a href="javascript:;" id="res_err" onclick="res_err()">[' + err_count + ']</a>个');
+            $('.res_tips').html('检测完成：正常<a href="javascript:;" id="res_ok" onclick="res_ok()">[' + succ_count + ']</a>个,屏蔽：<a href="javascript:;" id="res_stop" onclick="res_stop()">[' + ck_stop + ']</a>个，失败：<a href="javascript:;" id="res_err" onclick="res_err()">[' + err_count + ']</a>个');
             $('#btn_check').html('开始检测');
             $("#btn_check").removeAttr("disabled");
             ck_status = 1;//检测状态
