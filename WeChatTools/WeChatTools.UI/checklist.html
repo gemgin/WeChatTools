@@ -160,7 +160,7 @@
                             var domain = domain_arr[i]
                             var lowerDomain = domain.toLowerCase();
 
-                            if (IsURL(lowerDomain) == true) {
+                            if (lowerDomain.indexOf(".") > 0) {
                                 A++;
                                 $.ajax({
 
