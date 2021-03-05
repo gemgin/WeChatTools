@@ -214,9 +214,9 @@
                                     }
                                 });
                             } else if (domain.length != 0) {
-                                $('#ck_err').append(domain);
-                                $('#ck_err').append("\r\n");
-                                $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >>  " + domain + "   格式错误</a></li>");
+                               $('#ck_err').append(domain);
+                               $('#ck_err').append("\r\n");
+                               $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >>  " + domain + "   </a></li>");
                                 err_count++;
                                 adding_tips(domain_len, succ_count, err_count, ck_stop); //处理过程中提示
                                 if (err_count == domain_len || domain_len == err_count + succ_count + ck_stop) {
@@ -225,7 +225,7 @@
                             } else {
                                 //过滤空内容
                                 err_count++;
-                                $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >>过滤空内容</a></li>");
+                                $('.list').prepend("<li class=\"error1\"><a >" + gettime() + " >></a></li>");
                                 if (err_count == domain_len || domain_len == err_count + succ_count + ck_stop) {
                                     add_complete_tips(succ_count, err_count, ck_stop); //处理完成提示
                                 }
@@ -233,7 +233,7 @@
                             i++;
                             beach_add_domain();
                         }
-                    }, 2500);
+                    }, 1200);
                 })();
             }
         })
