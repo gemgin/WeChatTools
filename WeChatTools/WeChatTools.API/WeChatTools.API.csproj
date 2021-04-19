@@ -82,6 +82,8 @@
     <Content Include="dev\shorturl.ashx" />
     <Content Include="tools\hdBase64.ashx" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
+    <Content Include="pro\dyUrlCheck2.ashx" />
+    <Content Include="pro\dyUrlCheck.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -102,6 +104,12 @@
       <DependentUpon>shorturl.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pro\dyUrlCheck.ashx.cs">
+      <DependentUpon>dyUrlCheck.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\dyUrlCheck2.ashx.cs">
+      <DependentUpon>dyUrlCheck2.ashx</DependentUpon>
+    </Compile>
     <Compile Include="pro\icpCheck.ashx.cs">
       <DependentUpon>icpCheck.ashx</DependentUpon>
     </Compile>
