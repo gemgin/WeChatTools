@@ -62,11 +62,6 @@ namespace WeChatTools.API.pro
                                 result = SpVoiceObj2.Api(json2);
                                 SpVoiceObj2.Close();
 
-                                Logger.WriteLogggerTest("#################################################");
-                                Logger.WriteLogggerTest(userIP + ":" + result);
-                                Logger.WriteLogggerTest(context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"]);
-
-
 
                             }
                             catch (System.ServiceModel.CommunicationException)
