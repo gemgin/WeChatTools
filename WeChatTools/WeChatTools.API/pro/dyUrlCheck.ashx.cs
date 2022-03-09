@@ -27,13 +27,13 @@ namespace WeChatTools.API.pro
             string result = string.Empty;
             if (context.Request.HttpMethod.ToUpper().Equals(GET))
             {
-                userIP = GetWebClientIp(context);
+                userIP = LogTools.GetWebClientIp(context);
                 context.Response.ContentType = "text/plain";
                 TimeSpan dspNow = DateTime.Now.TimeOfDay;
 
                 string urlCheck = "{\"State\":false,\"Code\":\"003\",\"Data\":\" \",\"Msg\":\"参数错误,联系管理员!\"}";
 
-                if (IsInTimeInterval(dspNow, _strWorkingDayAM, _strWorkingDayPM))
+                if (LogTools.IsInTimeInterval(dspNow, _strWorkingDayAM, _strWorkingDayPM))
                 {
 
                     if (!string.IsNullOrEmpty(context.Request["url"]))
@@ -113,113 +113,7 @@ namespace WeChatTools.API.pro
                 return false;
             }
         }
-
-        private bool IsInTimeInterval(TimeSpan time, TimeSpan startTime, TimeSpan endTime)
-        {
-            //判断时间段开始时间是否小于时间段结束时间,如果不是就交换
-            if (startTime > endTime)
-            {
-                TimeSpan tempTime = startTime;
-                startTime = endTime;
-                endTime = tempTime;
-            }
-
-            if (time > startTime && time < endTime)
-            {
-                return true;
-            }
-            return false;
-        }
-
-
-        public static string GetWebClientIp(HttpContext httpContext)
-        {
-            string customerIP = "127.0.0.1";
-
-            if (httpContext == null || httpContext.Request == null || httpContext.Request.ServerVariables == null) return customerIP;
-
-            customerIP = httpContext.Request.ServerVariables["HTTP_CDN_SRC_IP"];
-
-            if (String.IsNullOrWhiteSpace(customerIP) || "unknown".Equals(customerIP.ToLower()))
-            {
-
-                customerIP = httpContext.Request.ServerVariables["Proxy-Client-IP"];
-            }
-            if (String.IsNullOrWhiteSpace(customerIP) || "unknown".Equals(customerIP.ToLower()))
-            {
-
-                customerIP = httpContext.Request.ServerVariables["WL-Proxy-Client-IP"];
-            }
-            /*
-            if (String.IsNullOrWhiteSpace(customerIP) || "unknown".Equals(customerIP.ToLower()))
-            {
-
-                customerIP = httpContext.Request.ServerVariables["HTTP_VIA"];
-            }
-            */
-            if (String.IsNullOrWhiteSpace(customerIP) || "unknown".Equals(customerIP.ToLower()))
-            {
-
-                customerIP = httpContext.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-                if (!String.IsNullOrWhiteSpace(customerIP) && customerIP.Contains(","))
-                {
-                    string[] xx = customerIP.Split(new char[] { ',' });
-                    if (xx.Length > 2)
-                    {
-                        customerIP = xx[xx.Length - 1].Trim();
-                    }
-                    else
-                    {
-                        customerIP = xx[0];
-
-                    }
-                }
-            }
-            if (String.IsNullOrWhiteSpace(customerIP))
-            {
-
-                customerIP = httpContext.Request.ServerVariables["HTTP_CLIENT_IP"];
-                if (!String.IsNullOrWhiteSpace(customerIP) && customerIP.Contains(","))
-                {
-                    customerIP = customerIP.Split(new char[] { ',' })[0];
-                }
-            }
-            if (String.IsNullOrWhiteSpace(customerIP))
-            {
-
-                customerIP = httpContext.Request.ServerVariables["REMOTE_ADDR"];
-                if (!String.IsNullOrWhiteSpace(customerIP) && customerIP.Contains(","))
-                {
-                    customerIP = customerIP.Split(new char[] { ',' })[0];
-                }
-
-            }
-
-            if (!IsIP(customerIP))
-            {
-                customerIP = "127.0.0.1";
-            }
-            return customerIP;
-        }
-
-        /// <summary>
-        /// 检查IP地址格式
-        /// </summary>
-        /// <param name="ip"></param>
-        /// <returns></returns>
-        public static bool IsIP(string ip)
-        {
-            if (!String.IsNullOrWhiteSpace(ip))
-            {
-                return System.Text.RegularExpressions.Regex.IsMatch(ip, @"^((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)$");
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
+         
 
     }
 }
