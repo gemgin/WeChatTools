@@ -47,7 +47,10 @@ namespace WeChatTools.API.pro
                                 result = SpVoiceObj2.Api(json2);
                                 SpVoiceObj2.Close();
                             }
-
+                            else
+                            {
+                                result = "{\"State\":false,\"Code\":\"003\",\"Data\":\"" + urlCheck + "\",\"Msg\":\"参数错误,联系管理员!\"}";
+                            }
                         }
                         catch (System.ServiceModel.CommunicationException)
                         {
