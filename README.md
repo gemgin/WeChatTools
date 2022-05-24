@@ -15,7 +15,7 @@
 - 微信域名检测试用接口 [http://wx.rrbay.com/pro/wxUrlCheck.ashx?url=http://www.teu7.cn](http://wx.rrbay.com/pro/wxUrlCheck.ashx?url=http://www.teu7.cn "微信域名检测试用接口")
 - QQ域名检测试用接口 [http://wx.rrbay.com/pro/qqUrlCheck.ashx?url=http://www.teu7.cn](http://wx.rrbay.com/pro/qqUrlCheck.ashx?url=http://www.teu7.cn "QQ域名检测试用接口")
 - 抖音域名检测试用接口 [http://wx.rrbay.com/pro/dyUrlCheck.ashx?url=http://www.teu7.cn](http://wx.rrbay.com/pro/dyUrlCheck.ashx?url=http://www.teu7.cn "抖音域名检测试用接口")
-- 域名备案查询接口 [http://wx.rrbay.com/pro/icpCheck.ashx?url=http://www.rrbay.com](http://wx.rrbay.com/pro/icpCheck.ashx?url=http://www.rrbay.com "域名备案查询接口")
+- 域名备案查询接口 [http://wx.rrbay.com/pro/icpCheck.ashx?url=qq.com](http://wx.rrbay.com/pro/icpCheck.ashx?url=qq.com "域名备案查询接口")
 ```
  {"State":true, "Code","101","Data":"www.teu7.cn",  "Msg":"屏蔽"}
  {"State":true, "Code","102","Data":"www.wxcheckurl.com","Msg":"正常"}
@@ -72,3 +72,7 @@
 ## 2021-04-19 域名检测系统升级说明
 - 抖音域名安全检测接口上线
 - 同一个key可以微信检测，qq检测,抖音域名检测以及域名备案信息查询
+
+## 2022-05-24 检测系统升级说明
+- 微信小程序状态检测接口上线
+- 同一个key可以微信检测，微信小程序状态,qq检测,抖音域名检测以及域名备案信息查询
