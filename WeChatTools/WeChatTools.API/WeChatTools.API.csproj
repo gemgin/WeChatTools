@@ -80,6 +80,8 @@
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <Content Include="pro\dyUrlCheck2.ashx" />
     <Content Include="pro\dyUrlCheck.ashx" />
+    <Content Include="pro\wxMiNiProCheck.ashx" />
+    <Content Include="pro\wxMiNiProCheck2.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,6 +128,12 @@
     </Compile>
     <Compile Include="pro\shorturl3.ashx.cs">
       <DependentUpon>shorturl3.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\wxMiNiProCheck.ashx.cs">
+      <DependentUpon>wxMiNiProCheck.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="pro\wxMiNiProCheck2.ashx.cs">
+      <DependentUpon>wxMiNiProCheck2.ashx</DependentUpon>
     </Compile>
     <Compile Include="pro\wxUrlCheck.ashx.cs">
       <DependentUpon>wxUrlCheck.ashx</DependentUpon>
