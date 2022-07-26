@@ -63,6 +63,7 @@
     <Content Include="img\loading-0.gif" />
     <Content Include="img\loading-1.gif" />
     <Content Include="img\loading-2.gif" />
+    <Content Include="img\thumbnail.jpg" />
     <Content Include="img\webchat.jpg" />
     <Content Include="index.html" />
     <Content Include="js\bootstrap.min.js" />
