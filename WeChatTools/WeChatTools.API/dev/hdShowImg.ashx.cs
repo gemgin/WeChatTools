@@ -21,18 +21,18 @@ namespace WeChatTools.API
                 string refhost = ConfigTool.ReadVerifyConfig("wxShowImg", "Other");
                 if (refurl.Equals(refhost))
                 {
-                    getImg(context);
+                    getMp3(context);
                 }
                 else
                 {
                     context.Response.ContentType = "text/plain";
                     context.Response.Write("非法访问!");
-                    
+
                 }
             }
             else
             {
-                getImg(context);
+                getMp3(context);
             }
             context.Response.End();
         }
@@ -58,6 +58,32 @@ namespace WeChatTools.API
             context.Response.OutputStream.Write(res.ResultByte, 0, res.ResultByte.Length);
         }
 
+
+        private void getMp3(HttpContext context)
+        {
+            string Speed = context.Request["speed"].ToString();
+            string SpeakValueEn = context.Request["s"].ToString();
+
+            SpeakValueEn = HttpUtility.UrlEncode(SpeakValueEn);
+            string baiduMp3 = "https://tts.baidu.com/text2audio?cuid=baike&lan=ZH&ctp=1&pdt=301&vol=9&rate=32&ie=UTF-8&per=0&spd=" + Speed + "&tex=" + SpeakValueEn;
+            HttpHelper helper = new HttpHelper();
+            HttpItem item = new HttpItem()
+            {
+
+                URL = baiduMp3,
+                Referer = "",//必填参数,这里置空
+                SecurityProtocolType = System.Net.SecurityProtocolType.Tls12,
+                UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Mobile/9B176 MicroMessenger/4.3.2",//useragent可有可无
+                ResultType = ResultType.Byte
+
+            };
+
+            HttpResult res = helper.GetHtml(item);
+
+            string code = "data:audio/mp3;base64," + Convert.ToBase64String(res.ResultByte);
+            context.Response.ContentType = "audio/mp3";
+            context.Response.OutputStream.Write(res.ResultByte, 0, res.ResultByte.Length);
+        }
 
         public bool IsReusable
         {
