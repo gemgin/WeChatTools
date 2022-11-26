@@ -40,10 +40,15 @@ namespace WeChatTools.API.pro
                         {
                             //需要检测的网址
                             urlCheck = context.Request["url"]; //检测的值
+                            string apiMode = context.Request["mode"]; //检测的值
+                            if (string.IsNullOrEmpty(apiMode))
+                            {
+                                apiMode = "AuthQQGJICPKey2";
+                            }
                             if (LogTools.IsDomain(urlCheck))
                             {
 
-                                string json2 = "{\"Mode\":\"AuthQQGJICPKey\",\"Param\":\"{\'CheckUrl\':\'" + urlCheck + "\',\'UserKey\':\'" + userKey + "\'}\"}";
+                                string json2 = "{\"Mode\":\'" + apiMode + "\',\"Param\":\"{\'CheckUrl\':\'" + urlCheck + "\',\'UserKey\':\'" + userKey + "\'}\"}";
 
                                 SpVoiceObj2 = new ServiceApiClient("NetTcpBinding_IServiceApi");
                                 SpVoiceObj2.Open();
@@ -108,7 +113,7 @@ namespace WeChatTools.API.pro
                 return false;
             }
         }
-         
+
 
     }
 }
