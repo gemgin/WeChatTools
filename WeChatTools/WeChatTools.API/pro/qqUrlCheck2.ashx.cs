@@ -46,7 +46,13 @@ namespace WeChatTools.API.pro
                                     urlCheck = System.Web.HttpUtility.UrlEncode(urlCheck);
                                 }
 
-                                string json2 = "{\"Mode\":\"AuthQQKey\",\"Param\":\"{\'CheckUrl\':\'" + urlCheck + "\',\'UserKey\':\'" + userKey + "\'}\"}";
+                                string apiMode = context.Request["mode"]; //检测的值
+                                if (string.IsNullOrEmpty(apiMode))
+                                {
+                                    apiMode = "AuthQQKey";
+                                }
+
+                                string json2 = "{\"Mode\":\'" + apiMode + "\',\"Param\":\"{\'CheckUrl\':\'" + urlCheck + "\',\'UserKey\':\'" + userKey + "\'}\"}";
 
                                 SpVoiceObj2 = new ServiceApiClient("NetTcpBinding_IServiceApi");
                                 SpVoiceObj2.Open();

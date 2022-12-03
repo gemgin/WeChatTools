@@ -40,7 +40,12 @@ namespace WeChatTools.API.pro
                             if (LogTools.IsDomain(urlCheck))
                             {
 
-                                string json2 = "{\"Mode\":\"AuthQQGJICPKey\",\"Param\":\"{\'CheckUrl\':\'" + urlCheck + "\',\'UserKey\':\'" + wxCheckApiKey + "\',\'UserIP\':\'" + userIP + "\',\'IsFreeKey\':1}\"}";
+                                string apiMode = context.Request["mode"]; //检测的值
+                                if (string.IsNullOrEmpty(apiMode))
+                                {
+                                    apiMode = "AuthQQGJICPKey";
+                                }
+                                string json2 = "{\"Mode\":\'" + apiMode + "\',\"Param\":\"{\'CheckUrl\':\'" + urlCheck + "\',\'UserKey\':\'" + wxCheckApiKey + "\',\'UserIP\':\'" + userIP + "\',\'IsFreeKey\':1}\"}";
 
                                 SpVoiceObj2 = new ServiceApiClient("NetTcpBinding_IServiceApi");
                                 SpVoiceObj2.Open();
