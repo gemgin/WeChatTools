@@ -21,7 +21,9 @@ namespace WeChatTools.API.pro
             {
                 string urlCheck = string.Empty;
                 context.Response.ContentType = "text/plain";
-
+                context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                context.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
+                context.Response.Headers.Add("Access-Control-Allow-Methods", "GET");
                 if (!string.IsNullOrEmpty(context.Request["appid"]) && !string.IsNullOrEmpty(context.Request["key"]) && context.Request["key"].Length == 32)
                 {
                     string userKey = context.Request["key"]; //key ,md5值
