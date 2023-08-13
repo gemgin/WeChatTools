@@ -14,8 +14,8 @@ namespace WeChatTools.API.pro
         protected const string POST = "POST";
         protected int IsFreeKey = 1;
         private string wxCheckApiKey = ConfigTool.ReadVerifyConfig("wxCheckApiKey3", "CheckKey");
-        private TimeSpan _strWorkingDayAM = DateTime.Parse("08:00").TimeOfDay;//工作时间上午08:00
-        private TimeSpan _strWorkingDayPM = DateTime.Parse("21:00").TimeOfDay;
+        private TimeSpan _strWorkingDayAM = DateTime.Parse("09:00").TimeOfDay;//工作时间上午08:00
+        private TimeSpan _strWorkingDayPM = DateTime.Parse("20:00").TimeOfDay;
 
         public void ProcessRequest(HttpContext context)
         {
@@ -98,7 +98,7 @@ namespace WeChatTools.API.pro
                     }
                     else
                     {
-                        result = "{\"State\":false,\"Code\":\"003\",\"Data\":\"" + userIP + "\",\"Msg\":\"测试接口,请在每天(08:00-21:00)时间段进行测试,需要讨论技术,联系管理员.\"}";
+                        result = "{\"State\":false,\"Code\":\"003\",\"Data\":\"" + userIP + "\",\"Msg\":\"测试接口,请在每天(09:00-20:00)时间段进行测试,需要讨论技术,联系管理员.\"}";
                     }
 
                 }
