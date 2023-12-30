@@ -43,7 +43,7 @@ namespace WeChatTools.API.pro
                                 string apiMode = context.Request["mode"]; //检测的值
                                 if (string.IsNullOrEmpty(apiMode))
                                 {
-                                    apiMode = "AuthQQGJICPKey";
+                                    apiMode = "AuthQQGJICPKey2";
                                 }
                                 string json2 = "{\"Mode\":\'" + apiMode + "\',\"Param\":\"{\'CheckUrl\':\'" + urlCheck + "\',\'UserKey\':\'" + wxCheckApiKey + "\',\'UserIP\':\'" + userIP + "\',\'IsFreeKey\':1}\"}";
 
