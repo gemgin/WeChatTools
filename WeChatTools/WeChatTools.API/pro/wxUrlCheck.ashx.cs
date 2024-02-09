@@ -40,7 +40,6 @@ namespace WeChatTools.API.pro
                             //    ServiceApiClient SpVoiceObj = null;
                             try
                             {
-
                                 bool isTrue = urlCheck.StartsWith("http");
                                 if (!isTrue) { urlCheck = "http://" + urlCheck; }
                                 if (urlCheck.StartsWith("http://") || urlCheck.StartsWith("https://"))

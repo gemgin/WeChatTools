@@ -36,9 +36,6 @@ namespace WeChatTools.API.pro
                     }
                     else
                     {
-
-
-
                         ServiceApiClient SpVoiceObj2 = null;
                         //  ServiceApiClient SpVoiceObj = null;
                         try
