@@ -54,7 +54,6 @@
   <ItemGroup>
     <Content Include="404.html" />
     <Content Include="api\DomainSetByKey.aspx" />
-    <Content Include="Config\site.config" />
     <Content Include="Lib\Newtonsoft.Json.dll" />
     <Content Include="Lib\ServiceStack.Common.dll" />
     <Content Include="Lib\ServiceStack.Common.xml" />
