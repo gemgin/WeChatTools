@@ -16,7 +16,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 HNCanYou.bin/
-
+api/
+site.config
+RedisCacheToolsYUN*.cs
 # Roslyn cache directories
 *.ide/
 

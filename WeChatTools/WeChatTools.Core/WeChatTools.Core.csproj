@@ -33,6 +33,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\WeChatTools.API\Lib\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\WeChatTools.API\Lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\WeChatTools.API\Lib\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\WeChatTools.API\Lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.ServiceModel" />
@@ -47,6 +59,8 @@
     <Compile Include="HttpHelper.cs" />
     <Compile Include="LogTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedisCacheToolsYUN0.cs" />
+    <Compile Include="RedisCacheToolsYUN1.cs" />
     <Compile Include="ServiceApi.cs" />
     <Compile Include="ToolsBase64.cs" />
     <Compile Include="WeiXinUrlCheck.cs" />
