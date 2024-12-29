@@ -14,7 +14,7 @@ namespace WeChatTools.API
     public class jsonpHandler : IHttpHandler
     {
         protected const string S_PROC_NAME = "sProcName";              //调用方法名
- 
+        protected const string USER_ID = "userId";                     //代理商id
         protected const string DOMAIN_KEY = "domainKey";               //微信域名检测key
         protected const string OPEN_ID = "openId";                     //用户id
         protected const string PIN_LV = "pinLv";                       //检测频率
@@ -45,7 +45,19 @@ namespace WeChatTools.API
 
                 try
                 {
-       
+ 
+                    #region 判断用户id是否存在操作权限
+                    string wxCheckApiKey = ConfigTool.ReadVerifyConfig("wxCheckId", "site");
+
+                    if (string.IsNullOrEmpty(dic[USER_ID]) || dic[USER_ID] != wxCheckApiKey)
+                    {
+                        //代理商不存在
+                        result = "{\"Status\":\"001\",\"Msg\":\"非法访问,联系管理员!\"}";
+                        JsonpResult(context, result);
+                        return;
+                    }                   
+
+                    #endregion
 
                     #region 获取授权key信息
 

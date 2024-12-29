@@ -17,7 +17,7 @@ namespace WeChatTools.API
         protected const string DOMAIN_LIST = "domainList";         //落地域名列表
         protected const string OVER_TIME = "overTime";          //授权截至时间   
         protected const string OPENID = "openId";          //用户id
-
+        protected const string USER_ID = "userId";                     //代理商id
         protected const string POST = "POST";
         public void ProcessRequest(HttpContext context)
         {
@@ -41,8 +41,17 @@ namespace WeChatTools.API
                 try
                 {
                     #region 判断用户id是否存在操作权限
-                    // string key = DESEncrypt.Decrypt(dic[Id_NO], dic[DES_KEY]);
+                    
                     string key = dic[DOMAIN_KEY];
+                    string wxCheckApiKey = ConfigTool.ReadVerifyConfig("wxCheckId", "site");
+
+                    if (string.IsNullOrEmpty(dic[USER_ID]) || dic[USER_ID] != wxCheckApiKey)
+                    {
+                        //代理商不存在
+                        result = "{\"Code\":\"009\",\"Msg\":\"非法访问,联系管理员!\"}";
+                        JsonpResult(context, result);
+                        return;
+                    }                   
                     #endregion
 
                     #region 获取授权key信息
