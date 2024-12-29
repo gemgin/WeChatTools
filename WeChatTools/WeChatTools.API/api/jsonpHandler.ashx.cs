@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 using WeChatTools.Core;
 
 
@@ -24,6 +25,7 @@ namespace WeChatTools.API
         protected const string AUTH_REMARK = "authRemark";             //授权备注一般用户qq
 
         protected const string POST = "POST";
+        
         public void ProcessRequest(HttpContext context)
         {
             ///获取调用方法名
@@ -40,6 +42,7 @@ namespace WeChatTools.API
                 {
                     //将key value 参数加入到Dictionary对象中
                     dic.Add(key, nvcForm[key]);
+                    
                 }
                 #endregion
 
@@ -47,8 +50,8 @@ namespace WeChatTools.API
                 {
  
                     #region 判断用户id是否存在操作权限
-                    string wxCheckApiKey = ConfigTool.ReadVerifyConfig("wxCheckId", "site");
-
+                    string wxCheckApiKey = ConfigTool.ReadVerifyConfig("wxCheckId", "CheckKey");
+                   
                     if (string.IsNullOrEmpty(dic[USER_ID]) || dic[USER_ID] != wxCheckApiKey)
                     {
                         //代理商不存在

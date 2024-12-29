@@ -19,6 +19,7 @@ namespace WeChatTools.API
         protected const string OPENID = "openId";          //用户id
         protected const string USER_ID = "userId";                     //代理商id
         protected const string POST = "POST";
+   
         public void ProcessRequest(HttpContext context)
         {
             ///获取调用方法名
@@ -43,7 +44,7 @@ namespace WeChatTools.API
                     #region 判断用户id是否存在操作权限
                     
                     string key = dic[DOMAIN_KEY];
-                    string wxCheckApiKey = ConfigTool.ReadVerifyConfig("wxCheckId", "site");
+                    string wxCheckApiKey = ConfigTool.ReadVerifyConfig("wxCheckId", "CheckKey");
 
                     if (string.IsNullOrEmpty(dic[USER_ID]) || dic[USER_ID] != wxCheckApiKey)
                     {
