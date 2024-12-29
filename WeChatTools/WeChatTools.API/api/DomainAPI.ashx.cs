@@ -16,7 +16,7 @@ namespace WeChatTools.API
         protected const string DOMAIN_KEY = "domainKey";               //微信域名检测key
         protected const string DOMAIN_LIST = "domainList";         //落地域名列表
         protected const string OVER_TIME = "overTime";          //授权截至时间   
-        protected const string OPENID = "openId";          //用户openid
+        protected const string OPENID = "openId";          //用户id
 
         protected const string POST = "POST";
         public void ProcessRequest(HttpContext context)

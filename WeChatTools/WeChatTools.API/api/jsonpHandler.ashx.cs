@@ -16,7 +16,7 @@ namespace WeChatTools.API
         protected const string S_PROC_NAME = "sProcName";              //调用方法名
  
         protected const string DOMAIN_KEY = "domainKey";               //微信域名检测key
-        protected const string OPEN_ID = "openId";                     //用户openid
+        protected const string OPEN_ID = "openId";                     //用户id
         protected const string PIN_LV = "pinLv";                       //检测频率
         protected const string COUNT_KEY = "countKey";                 //不限频率，流量计费模式，请求次数
         protected const string AUTH_TIME = "authTime";                 //检测创建时间
@@ -94,7 +94,7 @@ namespace WeChatTools.API
                                 }
                                 keyCountValue = keyCountValue + wxKeyCount;
                                 DateTime dt = DateTime.Parse(endDateTime);
-                                // DateTime dt = DateTime.Now.AddMonths(12);//更新一次 延长12个月
+                                
                                 RedisCacheToolsYUN0.Add("keyCount:" + wxcheckKey, keyCountValue, dt);
                                 result = "{\"Status\":\"110\",\"Msg\":\"充值成功,流量为:" + keyCountValue + ";有效期:" + endDateTime + "!\"}";
                             }
@@ -131,8 +131,7 @@ namespace WeChatTools.API
                                     {
                                         RedisCacheToolsYUN0.Remove("keyCount:" + wxcheckKey);
                                     }
-
-                                   // VoiceServerClass.DeleteSiteAuth(sae.Id.ToString());
+                                  
                                     result = "{\"Status\":\"101\",\"Msg\":\"授权key删除成功!\"}";
                                 }
                                 else
