@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.html" />
+    <Content Include="api\DomainSetByKey.aspx" />
     <Content Include="Lib\Newtonsoft.Json.dll" />
     <Content Include="Lib\ServiceStack.Common.dll" />
     <Content Include="Lib\ServiceStack.Common.xml" />
@@ -76,6 +77,9 @@
     <Content Include="Config\CheckKey.config" />
     <Content Include="dev\shorturl.ashx" />
     <Content Include="tools\hdBase64.ashx" />
+    <Content Include="api\DomainAPI.ashx" />
+    <Content Include="api\jsonpHandler.ashx" />
+    <Content Include="Config\site.config" />
     <None Include="Properties\PublishProfiles\publish.pubxml" />
     <Content Include="pro\dyUrlCheck2.ashx" />
     <Content Include="pro\dyUrlCheck.ashx" />
@@ -94,6 +98,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="api\DomainAPI.ashx.cs">
+      <DependentUpon>DomainAPI.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="api\DomainSetByKey.aspx.cs">
+      <DependentUpon>DomainSetByKey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="api\DomainSetByKey.aspx.designer.cs">
+      <DependentUpon>DomainSetByKey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\jsonpHandler.ashx.cs">
+      <DependentUpon>jsonpHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="dev\hdShowImg.ashx.cs">
       <DependentUpon>hdShowImg.ashx</DependentUpon>
     </Compile>

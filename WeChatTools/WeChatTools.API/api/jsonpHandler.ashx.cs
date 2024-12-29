@@ -14,7 +14,7 @@ namespace WeChatTools.API
     public class jsonpHandler : IHttpHandler
     {
         protected const string S_PROC_NAME = "sProcName";              //调用方法名
-        protected const string USER_ID = "userId";                     //代理商id
+ 
         protected const string DOMAIN_KEY = "domainKey";               //微信域名检测key
         protected const string OPEN_ID = "openId";                     //用户openid
         protected const string PIN_LV = "pinLv";                       //检测频率
@@ -53,18 +53,7 @@ namespace WeChatTools.API
                     switch (sProName)
                     {
                         case "Insert":
-                            /*
-                            SiteAuthEntity obj = new SiteAuthEntity();
 
-                            obj.PinLv = Convert.ToInt32(dic[PIN_LV]);
-                            obj.AuthTime = dic[AUTH_TIME];
-                            obj.AuthEndTime = dic[AUTH_END_TIME];
-                            obj.AuthRemark = dic[AUTH_REMARK];
-                            obj.UserName = ue.UserName;
-                            obj.SiteDomain = dic[DOMAIN_KEY];
-
-                            VoiceServerClass.InsertSiteAuth(obj);
-                            */
                             wxcheckKey = "wxcheck:" + dic[DOMAIN_KEY];
                             if (RedisCacheToolsYUN0.Exists(wxcheckKey))
                             {
