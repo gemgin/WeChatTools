@@ -42,6 +42,7 @@ namespace WeChatTools.API.pro
                         {
                             //需要检测的网址
                             urlCheck = context.Request["url"]; //检测的值
+                            urlCheck = LogTools.FilterUrl(urlCheck);//过滤
                             bool isTrue = urlCheck.StartsWith("http");
                             if (!isTrue) { urlCheck = "http://" + urlCheck; }
                             if (urlCheck.StartsWith("http://") || urlCheck.StartsWith("https://"))

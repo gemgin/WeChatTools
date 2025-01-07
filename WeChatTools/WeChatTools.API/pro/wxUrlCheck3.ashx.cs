@@ -60,6 +60,7 @@ namespace WeChatTools.API.pro
                                 //需要检测的网址                                
                               //  bool isTrue = urlCheck.StartsWith("http");
                                // if (!isTrue && !model.Equals("AuthICPKey")) { urlCheck = "http://" + urlCheck; }
+                                urlCheck = LogTools.FilterUrl(urlCheck);//过滤
                                 if (urlCheck.StartsWith("http://") || urlCheck.StartsWith("https://"))
                                 {
                                     urlCheck = System.Web.HttpUtility.UrlEncode(urlCheck);

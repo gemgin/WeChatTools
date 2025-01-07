@@ -250,6 +250,29 @@ namespace WeChatTools.Core
 
         }
 
+        /// <summary>
+        /// URL过滤特殊字符
+        /// </summary>
+        /// <param name="url">URL</param>
+        /// <returns></returns>
+        public static string FilterUrl(string url)
+        {
+            string replaceStr = url;
+            if (!string.IsNullOrEmpty(url))
+            {
+                replaceStr = replaceStr.ToLower();
+                replaceStr = replaceStr.Replace("script", "");
+                replaceStr = replaceStr.Replace("delete", "");
+                replaceStr = replaceStr.Replace("alert", "");
+                replaceStr = replaceStr.Replace("select", "");
+                replaceStr = replaceStr.Replace("update", "");
+                replaceStr = replaceStr.Replace("insert", "");
+              //  replaceStr = replaceStr.Replace("like", "");
+            }
+
+            return replaceStr;
+
+        }
 
         public static bool IsInTimeInterval(TimeSpan time, TimeSpan startTime, TimeSpan endTime)
         {
